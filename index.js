@@ -67,6 +67,17 @@ app.use(bodyParser.json())
 
 
 
+app.get('/', function (req, res) {
+    res.render('index')
+})
+
+app.post('/', async function(req, res) {
+
+    res.render('index')
+})
+
+
+
 app.get('/api/shoes', async function (req, res) {
 
     res.render('shoes')
@@ -94,7 +105,7 @@ app.post('/api/shoes/:updateCart', async function(req, res){
 
 app.post('/api/shoes/:addCart', async function(req, res){
 
-    
+
 })
 
 
