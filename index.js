@@ -13,7 +13,7 @@ const pg = require("pg");
 const Pool = pg.Pool;
 
 // which db connection to use
-const connectionString = process.env.DATABASE_URL || 'postgresql://codex-coder:pg123@localhost:5432/shoe_catalogue';
+const connectionString = process.env.DATABASE_URL || 'postgresql://sinovuyo:pg123@localhost:5432/shoe_catalogue';
 
 const pool = new Pool({
     connectionString
@@ -64,6 +64,38 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+
+
+
+app.get('/api/shoes', async function (req, res) {
+
+    res.render('shoes')
+})
+
+app.get('/api/shoes/:brand', async function (req, res){
+
+    res.render('shoes')
+})
+
+app.get('/api/shoes/:colour', async function (req, res) {
+    
+
+})
+
+app.get('/api/shoes/:size', async function(req, res){
+
+
+})
+
+app.post('/api/shoes/:updateCart', async function(req, res){
+
+
+})
+
+app.post('/api/shoes/:addCart', async function(req, res){
+
+    
+})
 
 
 const PORT = process.env.PORT || 3015
